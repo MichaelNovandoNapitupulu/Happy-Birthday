@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Friska ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+:root{
+--pink:#ff4d8d;
+--pink2:#ff6ec7;
+--purple:#4b0082;
+--white:#ffffff;
+}
+
+body{
+
+background:
+linear-gradient(
+135deg,
+#2b1055,
+#4b0082,
+#ff4d8d,
+#ff6ec7
+);
+
+background-size:400% 400%;
+
+animation:bgMove 15s ease infinite;
+
+overflow-x:hidden;
+
+color:white;
+}
+
+@keyframes bgMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+.hero{
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+text-align:center;
+
+padding:20px;
+
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+height:350px;
+
+background:rgba(255,255,255,.15);
+
+filter:blur(100px);
+
+border-radius:50%;
+
+top:10%;
+left:10%;
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+height:350px;
+
+background:rgba(255,255,255,.15);
+
+filter:blur(100px);
+
+border-radius:50%;
+
+bottom:0;
+right:0;
+}
+
+.hero h1{
+
+font-size:4rem;
+
+z-index:2;
+
+animation:glow 2s infinite;
+}
+
+.hero h2{
+
+font-weight:300;
+
+margin-top:20px;
+
+z-index:2;
+}
+
+.hero p{
+
+margin-top:10px;
+
+opacity:.9;
+
+z-index:2;
+}
+
+.btn{
+
+margin-top:40px;
+
+padding:15px 40px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+font-size:18px;
+
+font-weight:600;
+
+background:white;
+
+color:var(--pink);
+
+transition:.4s;
+
+z-index:2;
+}
+
+.btn:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 25px white;
+}
+
+@keyframes glow{
+
+0%{
+text-shadow:0 0 10px white;
+}
+
+50%{
+text-shadow:0 0 30px pink;
+}
+
+100%{
+text-shadow:0 0 10px white;
+}
+
+}
+
+section{
+
+padding:90px 10%;
+}
+
+.title{
+
+text-align:center;
+
+font-size:3rem;
+
+margin-bottom:50px;
+}
+
+.glass{
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.2);
+
+border-radius:30px;
+
+padding:30px;
+
+box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+
+.counter{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+}
+
+.box{
+
+background:rgba(255,255,255,.15);
+
+padding:25px;
+
+border-radius:25px;
+
+min-width:140px;
+
+text-align:center;
+
+backdrop-filter:blur(15px);
+}
+
+.box h3{
+
+font-size:2rem;
+}
+
+.letter{
+
+max-width:900px;
+
+margin:auto;
+
+line-height:2;
+}
+
+.slider{
+
+max-width:700px;
+
+margin:auto;
+
+position:relative;
+}
+
+.slide{
+
+display:none;
+
+width:100%;
+
+border-radius:25px;
+
+box-shadow:0 10px 40px rgba(0,0,0,.3);
+}
+
+.slide.active{
+
+display:block;
+
+animation:fade 1s;
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+.timeline{
+
+max-width:900px;
+
+margin:auto;
+}
+
+.timeline-item{
+
+margin-bottom:25px;
+
+padding:20px;
+
+border-left:4px solid white;
+}
+
+.secret-btn{
+
+padding:18px 40px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+background:white;
+
+color:var(--pink);
+}
+
+.secret-wrap{
+
+text-align:center;
+
+margin-top:40px;
+}
+
+.ending{
+
+text-align:center;
+}
+
+.ending h1{
+
+font-size:3rem;
+
+margin-bottom:20px;
+}
+
+.ending p{
+
+max-width:800px;
+
+margin:auto;
+
+line-height:2;
+}
+
+.heart{
+
+position:fixed;
+
+top:-20px;
+
+pointer-events:none;
+
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+
+to{
+
+transform:translateY(110vh);
+}
+
+}
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:2.5rem;
+}
+
+.title{
+
+font-size:2rem;
+}
+
+}
+
+/* LOADING SCREEN */
+
+#loader{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:
+linear-gradient(
+135deg,
+#2b1055,
+#4b0082,
+#ff4d8d
+);
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+z-index:99999;
+
+transition:1.5s;
+}
+
+.loader-content{
+
+text-align:center;
+}
+
+.loader-content h1{
+
+font-size:80px;
+
+animation:pulse 1.5s infinite;
+}
+
+.loader-content h2{
+
+margin-top:10px;
+
+font-size:32px;
+
+letter-spacing:2px;
+}
+
+.loader-content p{
+
+margin-top:15px;
+
+opacity:.8;
+}
+
+.loading-bar{
+
+width:250px;
+
+height:8px;
+
+background:rgba(255,255,255,.2);
+
+border-radius:50px;
+
+overflow:hidden;
+
+margin-top:30px;
+}
+
+.loading-progress{
+
+width:0%;
+
+height:100%;
+
+background:white;
+
+animation:loading 4s linear forwards;
+}
+
+@keyframes loading{
+
+from{
+width:0%;
+}
+
+to{
+width:100%;
+}
+
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.2);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="loader">
+
+    <div class="loader-content">
+
+        <h1>❤️</h1>
+
+        <h2>For Sayangkuu</h2>
+
+        <p>Preparing Something Special...</p>
+
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+
+    </div>
+
+</div>
+<audio id="music" loop>
+<source src="music/ulangtahun.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+
+<h1>
+🎂 Happy Birthday 🎂
+<br>
+Friska ❤️
+</h1>
+
+<h2>
+Friska Bunga Dewata Anak Om Tunjung
+</h2>
+
+<p>
+23 Juni 2004 ✨
+</p>
+
+<button class="btn" onclick="startBirthday()">
+🎁 Buka Hadiah
+</button>
+
+</section>
+
+<!-- COUNTDOWN HUBUNGAN -->
+
+<section>
+
+<h1 class="title">
+❤️ Waktu Bersama Kita ❤️
+</h1>
+
+<div class="counter">
+
+<div class="box glass">
+<h3 id="days">0</h3>
+<p>Hari</p>
+</div>
+
+<div class="box glass">
+<h3 id="hours">0</h3>
+<p>Jam</p>
+</div>
+
+<div class="box glass">
+<h3 id="minutes">0</h3>
+<p>Menit</p>
+</div>
+
+<div class="box glass">
+<h3 id="seconds">0</h3>
+<p>Detik</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SURAT CINTA -->
+
+<section>
+
+<h1 class="title">
+💌 Untuk Friska 💌
+</h1>
+
+<div class="letter glass">
+
+<p id="typing"></p>
+
+</div>
+
+</section>
+
+
+<!-- SLIDER FOTO -->
+
+<section>
+
+<h1 class="title">
+📸 Kenangan Kita 📸
+</h1>
+
+<div class="slider">
+
+<img class="slide active" src="images/foto1.jpeg">
+
+<img class="slide" src="images/foto2.jpeg">
+
+<img class="slide" src="images/foto3.jpeg">
+
+<img class="slide" src="images/foto4.jpeg">
+
+<img class="slide" src="images/foto5.jpeg">
+
+</div>
+
+</section>
+
+
+<!-- TIMELINE -->
+
+<section>
+
+<section>
+
+<h1 class="title">
+✨ Impian Kita ✨
+</h1>
+
+<div class="glass">
+
+<p>☑️ Melewati 4 tahun bersama</p>
+<p>⬜ Liburan berdua</p>
+<p>⬜ Menonton konser bersama</p>
+<p>⬜ Membuat lebih banyak kenangan</p>
+<p>⬜ Merayakan banyak ulang tahun bersama</p>
+<p>⬜ Tumbuh dan sukses bersama</p>
+
+</div>
+
+</section>
+<!-- PESAN RAHASIA -->
+
+<section>
+
+<div class="secret-wrap">
+
+<button
+class="secret-btn"
+onclick="secretMessage()">
+
+🎁 Buka Pesan Rahasia ❤️
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PENUTUP -->
+
+<section class="ending">
+
+<h1>
+❤️ Happy Birthday SAYANGKU❤️
+</h1>
+
+<p>
+
+Selamat ulang tahun sayangku.
+
+Hari ini adalah hari yang sangat spesial,
+karena seseorang yang sangat berarti dalam hidupku
+bertambah usia.
+
+Terima kasih sudah hadir dan bertahan
+sejauh ini.
+
+Terima kasih atas semua perhatian,
+dukungan, kesabaran,
+dan cinta yang selalu kamu berikan.
+
+Aku berharap semua impianmu tercapai,
+kesehatan selalu menyertaimu,
+dan kebahagiaan tidak pernah jauh darimu.
+
+Semoga kita masih bisa membuat
+banyak kenangan indah lainnya bersama.
+
+Aku mencintaimu hari ini,
+besok,
+dan seterusnya.
+
+❤️ Michael Tamvan Dan Pemberani❤️
+
+</p>
+
+</section>
+
+
+
+<script>
+
+/* MULAI HADIAH */
+
+function startBirthday(){
+
+const music =
+document.getElementById("music");
+
+music.play().catch(()=>{});
+
+confetti({
+
+particleCount:300,
+
+spread:180,
+
+origin:{
+y:0.6
+}
+
+});
+
+window.scrollTo({
+
+top:window.innerHeight,
+
+behavior:"smooth"
+
+});
+
+createHearts();
+
+}
+
+
+
+/* EFEK KETIK */
+
+const message = `
+
+Selamat ulang tahun sayangku, Friska Sayangg❤️❤️❤️❤️❤️❤️
+
+Hari ini adalah hari yang sangat spesial
+karena seseorang yang paling berharga
+dalam hidupku bertambah usia.
+
+Terima kasih sudah hadir dalam hidupku.
+
+Terima kasih untuk semua perhatian,
+dukungan,
+tawa,
+dan cinta yang selalu kamu berikan.
+
+Aku berharap semua impianmu tercapai.
+
+Semoga kesehatan,
+kebahagiaan,
+dan kesuksesan
+selalu menyertaimu.
+
+Aku sayang kamu lebih dari
+yang bisa dijelaskan oleh kata-kata.
+
+Happy Birthday Sayang ❤️
+
+- Michael ❤️
+
+`;
+
+let i = 0;
+
+function typeWriter(){
+
+if(i < message.length){
+
+document.getElementById("typing")
+.innerHTML += message.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,40);
+
+}
+
+}
+
+typeWriter();
+
+
+
+/* TIMER HUBUNGAN */
+
+const startDate =
+new Date("2022-04-22");
+
+setInterval(()=>{
+
+const now = new Date();
+
+const diff = now - startDate;
+
+const days =
+Math.floor(diff/(1000*60*60*24));
+
+const hours =
+Math.floor(diff/(1000*60*60)%24);
+
+const minutes =
+Math.floor(diff/(1000*60)%60);
+
+const seconds =
+Math.floor(diff/1000%60);
+
+document.getElementById("days")
+.innerText = days;
+
+document.getElementById("hours")
+.innerText = hours;
+
+document.getElementById("minutes")
+.innerText = minutes;
+
+document.getElementById("seconds")
+.innerText = seconds;
+
+},1000);
+
+
+
+/* SLIDER FOTO */
+
+let currentSlide = 0;
+
+const slides =
+document.querySelectorAll(".slide");
+
+setInterval(()=>{
+
+slides[currentSlide]
+.classList.remove("active");
+
+currentSlide++;
+
+if(currentSlide >= slides.length){
+
+currentSlide = 0;
+
+}
+
+slides[currentSlide]
+.classList.add("active");
+
+},3000);
+
+
+
+/* HATI JATUH */
+
+function createHearts(){
+
+setInterval(()=>{
+
+const heart =
+document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML = "❤️";
+
+heart.style.left =
+Math.random()*100 + "vw";
+
+heart.style.fontSize =
+(Math.random()*20+15)+"px";
+
+heart.style.animationDuration =
+(Math.random()*3+3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},6000);
+
+},200);
+
+}
+
+
+
+/* PESAN RAHASIA */
+
+function secretMessage(){
+
+Swal.fire({
+
+title:"Untuk Friska ❤️",
+
+html:`
+
+Terima kasih sudah hadir
+dan menjadi bagian terbaik
+dalam hidupku.
+
+<br><br>
+
+Aku bersyukur bisa mengenalmu.
+
+<br><br>
+
+Happy Birthday Sayang ❤️
+
+`,
+
+confirmButtonText:
+"❤️ Aku Senang ❤️"
+
+});
+
+}
+
+/* LOADER */
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document.getElementById("loader")
+.style.opacity="0";
+
+setTimeout(()=>{
+
+document.getElementById("loader")
+.style.display="none";
+
+},1500);
+
+},4000);
+
+});
+
+</script>
+
+</body>
+
+</html>
